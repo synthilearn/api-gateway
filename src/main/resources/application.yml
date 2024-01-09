@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test
+          uri: lb://TEST-SERVICE
+          predicates:
+            - Path=/test/**
+          filters:
+            - AuthFilter
+
+        - id: auth
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+          filters:
+            - AuthFilter
+
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer-service/register/v1/**
+            - Path=/customer-service/v1/customer/**
