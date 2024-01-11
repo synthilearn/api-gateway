@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
     environment:
       JAVA_TOOL_OPTIONS: -javaagent:./opentelemetry-javaagent.jar
-      OTEL_EXPORTER_OTLP_ENDPOINT: http://agent:4317
-      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://agent:4317
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://62.76.228.98:4327
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://62.76.228.98:4327
       OTEL_EXPORTER_OTLP_PROTOCOL: grpc
       OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME}
       OTEL_TRACES_EXPORTER: otlp
@@ -18,15 +18,3 @@ services:
       GITHUB_PASSWORD: ${GITHUB_PASSWORD}
     ports:
       - "48002:48002"
-
-  agent:
-    image: grafana/agent:latest
-    command: run --server.http.listen-addr=0.0.0.0:12345 /etc/grafana-agent-flow.river
-    ports:
-      - "4317:4317"
-      - "4318:4318"
-    volumes:
-      - ./grafana-agent-flow.river:/etc/grafana-agent-flow.river
-    environment:
-      HOSTNAME: agent
-      AGENT_MODE: flow
