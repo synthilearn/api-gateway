@@ -1,6 +1,17 @@
 spring:
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowedOriginPatterns: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PATCH
+              - PUT
+              - DELETE
+
       routes:
         - id: auth
           uri: lb://ENTRYPOINT-SERVICE
