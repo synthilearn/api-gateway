@@ -17,4 +17,4 @@ services:
       GITHUB_USERNAME: ${GITHUB_USERNAME}
       GITHUB_PASSWORD: ${GITHUB_PASSWORD}
     ports:
-      - "48002:48002"
+      - "80:80"
