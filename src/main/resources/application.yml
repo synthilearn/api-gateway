@@ -26,3 +26,10 @@ spring:
             - Path=/customer-service/**
           filters:
             - AuthFilter
+
+        - id: workspace-service
+          uri: lb://WORKSPACE-SERVICE
+          predicates:
+            - Path=/workspace-service/**
+          filters:
+            - AuthFilter
