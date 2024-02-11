@@ -1,17 +1,17 @@
 spring:
   cloud:
     gateway:
-      globalcors:
-        cors-configurations:
-          "[/**]":
-            allowedOriginPatterns: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PATCH
-              - PUT
-              - DELETE
-              - OPTIONS
+#      globalcors:
+#        cors-configurations:
+#          "[/**]":
+#            allowedOriginPatterns: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PATCH
+#              - PUT
+#              - DELETE
+#              - OPTIONS
 
       routes:
         - id: auth
