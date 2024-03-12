@@ -34,3 +34,17 @@ spring:
             - Path=/workspace-service/**
           filters:
             - AuthFilter
+
+        - id: workarea-service
+          uri: lb://WORKAREA-SERVICE
+          predicates:
+            - Path=/workarea-service/**
+          filters:
+            - AuthFilter
+
+        - id: dictionary-service
+          uri: lb://DICTIONARY-SERVICE
+          predicates:
+            - Path=/dictionary-service/**
+          filters:
+            - AuthFilter
