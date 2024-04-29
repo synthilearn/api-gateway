@@ -48,3 +48,10 @@ spring:
             - Path=/dictionary-service/**
           filters:
             - AuthFilter
+
+        - id: game-service
+          uri: lb://GAME-SERVICE
+          predicates:
+            - Path=/game-service/**
+          filters:
+            - AuthFilter
